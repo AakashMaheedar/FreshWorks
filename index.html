@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FreshWorksRound2</title>
+    <link rel="stylesheet" href="style/FreshWorks.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+    <style>
+        .w3-allerta {
+            font-family: "Allerta Stencil", Sans-serif;
+        }
+		body
+		{
+
+		background: url(backgroun.jpg);
+		background-repeat: no-repeat;
+		 height: 100%;
+
+		background-position: center;
+		background-size: cover;
+		}
+		}
+    </style>
+
+
+</head>
+
+<body  >
+    <div class="w3-container">
+        <h1 class="w3-center w3-allerta w3-xxlarge">Country Explorer</h1>
+        <div class="w3-container w3-blue">
+		
+		
+		
+		<form name="myForm" class="searchForm" action="" method="get" >
+
+				<div class="searchForm-inputContainer">
+					<img src="searchicon.png" id="input_img">
+					<input type="search" class="searchForm-input" name="fname" autofocus />
+					
+				</div>
+				
+				<button id="frm1" type="submit" class="searchForm-button searchForm-submit" onclick="validateForm()">Search</button>
+				<button type ="Reset" class="searchForm-button searchForm-submit">Clear</button>
+				
+		</form>
+		
+		
+        		<input id="getAPI" type="submit" value="Get All Country Details"  class="searchForm-button searchForm-submit ">
+				 
+				 
+				 <div id="result1" class="w3-container"></div>
+				 <div id="result2" class="w3-container"></div>
+				
+		   	
+			
+
+    </div>
+
+
+
+
+    <script>
+		document.getElementById('frm1').addEventListener('click',frm1);
+       	document.getElementById('getAPI').addEventListener('click', getAPI);
+		
+		
+		function getAPI() {
+			fetch('https://restcountries.eu/rest/v2/')
+                .then((res) => { return res.json() })
+                .then((data) => {
+                    let result = `<h2 class="w3-center w3-allerta w3-xxlarge"> COUNTRY DETAILS VIA API</h2>`;
+                    data.forEach((v2) => {
+                        const {name,topLevelDomain,callingCodes,capital,altSpellings,region,subregion,population,latlng,demonym,area,gini,timezones,borders,nativeName,numericCode,currencies,flag} = v2
+                        result +=
+                            `<div class="w3-panel w3-leftbar w3-border w3-round-small w3-border-blue w3-margin">
+                                
+                                <ul class="w3-ul">
+                                    
+									  
+                                    <li> User Full Name : ${name} <img src=${flag} alt="W3Schools.com" height="10%" width="25%" align="right"></li>
+									<li>Top Level Domain:${topLevelDomain}</li>
+									<li>callingCodes:${callingCodes}</li>
+									<li> capital: ${capital}</li>
+									<li> altSpellings: ${altSpellings}</li>
+									<li> region: ${region}</li>
+									<li> subregion: ${subregion}</li>
+									
+									<li> population: ${population}</li>
+									<li> latlng: ${latlng}</li>
+									<li> demonym: ${demonym}</li>
+									<li> area: ${area}</li>
+									<li> gini: ${gini}</li>
+									<li> timezones: ${timezones}</li>
+									<li> borders: ${borders}</li>
+									<li> nativeName: ${nativeName}</li>
+									<li> numericCode: ${numericCode}</li>
+									<li> currencies: ${currencies}</li>
+									 </ul>
+                             </div>`;
+                        document.getElementById('result1').innerHTML = result;
+                    });
+                })
+
+        }
+		function validateForm() {
+		  var x = document.forms["myForm"]["fname"].value;
+		  <!--
+		  if (x == "") {
+			alert("Country name must be filled out");
+			return false;
+		  }
+		  else
+		  {
+		    let result = `<h2 class="w3-center w3-allerta w3-xxlarge"> COUNTRY DETAILS VIA API</h2>`;
+			
+					
+					result+=x;
+			document.getElementById('result2').innerHTML = result;
+			 
+			}
+		//-->	
+		} 
+      
+    </script>
+
+</body>
+
+</html>
