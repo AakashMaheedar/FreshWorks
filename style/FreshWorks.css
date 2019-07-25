@@ -1,0 +1,139 @@
+.w3-container:after,.w3-panel:after,.w3-row:after,.w3-row-padding:after,.w3-topnav:after,.w3-clear:after
+{
+	content:"";
+	display:table;
+	clear:both
+}
+#input_img {  bottom:20px; left:10px; width:40px; height:40px; }
+#example1 {
+  background: url(mountain.jpg);
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+.w3-container
+{
+	padding:0.01em 16px
+}
+.w3-center{
+	text-align:center!important
+	}
+.w3-xxlarge
+{
+	font-size:36px!important
+}
+.w3-panel
+{
+	padding:0.01em 16px;margin-top:16px!important;
+	margin-bottom:16px!important
+	}
+.w3-leftbar
+{
+	border-left:6px solid #ccc!important
+	}
+.w3-rightbar
+{
+	border-right:6px solid #ccc!important
+}
+.w3-border
+{
+	border:1px solid #ccc!important
+}
+.w3-border-blue,.w3-hover-border-blue:hover
+{border-color:#2196F3!important
+}
+.w3-round-small
+{border-radius:2px!important
+}
+.w3-round,.w3-round-medium
+{
+	border-radius:4px!important
+}
+.w3-margin
+{
+	margin:16px!important
+}
+.w3-margin-0{
+	margin:0!important
+}
+.w3-ul.w3-hoverable li:hover
+{background-color:#ccc}
+.w3-ul
+{list-style-type:none;padding:0;margin:0}ul.w3-ul li{padding:6px 2px 6px 16px;border-bottom:1px solid #ddd}ul.w3-ul li:last-child{border-bottom:none}
+
+.searchForm-inputContainer {
+  border: 1px solid #d0d0d0;
+  padding: 0 10px;
+  background-color: white;
+  display: flex;
+  
+}
+
+.searchForm-inputContainer button {
+  border: none;
+  background-color: white;
+}
+
+.searchForm-input {
+  width: 500px;
+  border: none;
+  border-radius: 3px;
+  padding: 14px 20px;
+  font-size: 1.6rem;
+  outline: none;
+}
+
+.searchForm-input:focus {
+  outline: none;
+}
+
+.searchForm-searchIcon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.searchForm-inlineSubmit {
+  display: none;
+}
+
+.searchForm-button {
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px 30px;
+  font-size: 1.5rem;
+  overflow: hidden;
+  vertical-align: top;
+  cursor: pointer;
+  background: transparent;
+  margin: 3rem 0.8rem;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.searchForm-button::before {
+  content: "";
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150%;
+  height: 100%;
+  z-index: -1;
+  background-color: #ddd;
+  transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -10em, 0);
+  transition: transform 0.3s, opacity 0.3s, background-color 0.3s, -webkit-transform 0.3s;
+}
+
+.searchForm-button:hover::before {
+  opacity: 1;
+  transform: rotate3d(0, 0, 1, 0deg);
+}
+
+.searchForm-button:hover {
+  color: black;
+  border-color: #555;
+}
+
